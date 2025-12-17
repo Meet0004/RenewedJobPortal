@@ -7,7 +7,7 @@ const Header = () => {
             <h2 className='text-2xl'>Job Portal</h2>
             <div className='flex gap-4 text-lg'> 
                 <Link to='/'>Home</Link> {/* so page dont reloads eve tough url changes*/}
-                <Link to='/companies_details'>Job Posting</Link> {/* so page dont reloads eve tough url changes*/}
+                <Link to='/company_details'>Job Posting</Link> {/* so page dont reloads eve tough url changes*/}
                 <Link to='/resources'>Resources</Link>
                 <Link to='/contact_us'>Contact Us</Link>  
                 <Link to='/legal_info'>Legal</Link>
