@@ -6,19 +6,21 @@ import Resources from './pages/Resources'
 import Contact_us from './pages/Contact_us'
 import Legal_info from './pages/Legal_info'
 import Header from './components/Header'
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return (
+
     <div>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        
-<Route path="/company-details" element={<Companies_details />} />
-<Route
-  path="/company-details/:companyName/:role"
-  element={<Companies_details />}
-/>
+
+        <Route path="/company-details" element={<Companies_details />} />
+        <Route
+          path="/company-details/:companyName/:role"
+          element={<Companies_details />}
+        />
 
 
 
@@ -26,6 +28,7 @@ const App = () => {
         <Route path="/contact-us" element={<Contact_us />} />
         <Route path="/legal-info" element={<Legal_info />} />
       </Routes>
+      <Analytics />
     </div>
   )
 }
