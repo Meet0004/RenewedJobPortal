@@ -1,91 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-
-const companies = [
-  {
-    company: 'fampay',
-    role: 'software-dev-intern',
-    title: 'FamPay – Software Dev Intern',
-    location: 'Bangalore',
-    stipend: '₹25,000'
-  },
-  {
-    company: 'google',
-    role: 'frontend-intern',
-    title: 'Google – Frontend Intern',
-    location: 'Hyderabad',
-    stipend: '₹40,000'
-  },
-  {
-    company: 'amazon',
-    role: 'backend-intern',
-    title: 'Amazon – Backend Intern',
-    location: 'Chennai',
-    stipend: '₹35,000'
-  },
-  {
-    company: 'microsoft',
-    role: 'fullstack-intern',
-    title: 'Microsoft – Full Stack Intern',
-    location: 'Pune',
-    stipend: '₹30,000'
-  }
-]
+import companiesData from '../data/jobData/jobData'
+import CompanyDetailPage from '../components/CompanyDetailPage'
+import CompanyListPage from '../components/CompanyListPage'
 
 const Companies_details = () => {
-  const params = useParams()
-  const companyName = params.companyName
-  const role = params.role
+  const { companyName, role } = useParams()
+  const [searchTerm, setSearchTerm] = useState('')
 
-  const selectedCompany =
-    companyName && role
-      ? companies.find(
-          c =>
-            c.company === companyName &&
-            c.role === role
-        )
-      : null
+  const selectedCompany = companyName && role 
+    ? companiesData.find(c => c.company === companyName && c.role === role)
+    : null
 
-  // 🔴 Detail page
+  const filteredCompanies = companiesData.filter(item => 
+    item.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.role.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    item.location.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  // Detail page
   if (companyName && role) {
     if (!selectedCompany) {
       return (
-        <div style={{ padding: '20px' }}>
-          <h2>Company not found</h2>
-          <Link to="/company-details">← Back</Link>
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Company Not Found</h2>
+            <Link to="/company-details" className="text-orange-600 hover:underline">
+              ← Back to Home
+            </Link>
+          </div>
         </div>
       )
     }
 
     return (
-      <div style={{ padding: '20px' }}>
-        <h2>{selectedCompany.title}</h2>
-        <p><b>Company:</b> {selectedCompany.company}</p>
-        <p><b>Role:</b> {selectedCompany.role}</p>
-        <p><b>Location:</b> {selectedCompany.location}</p>
-        <p><b>Stipend:</b> {selectedCompany.stipend}</p>
-
-        <br />
-        <Link to="/company-details">← Back to list</Link>
-      </div>
+      <CompanyDetailPage 
+        selectedCompany={selectedCompany} 
+        allCompanies={companiesData} 
+      />
     )
   }
 
-  // 🟢 List page
+  // List page
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Company Listings</h2>
-
-      {companies.map((item, index) => (
-        <div key={index} style={{ marginBottom: '12px' }}>
-          <Link
-            to={`/company-details/${item.company}/${item.role}`}
-          >
-            {item.title}
-          </Link>
-        </div>
-      ))}
-    </div>
+    <CompanyListPage 
+      filteredCompanies={filteredCompanies}
+      searchTerm={searchTerm}
+      setSearchTerm={setSearchTerm}
+    />
   )
 }
 
