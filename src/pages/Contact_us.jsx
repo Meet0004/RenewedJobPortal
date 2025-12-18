@@ -15,7 +15,7 @@ const Contact_Us = () => {
         
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-black mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Contact Us
           </h1>
           <p className="text-black/60 text-sm md:text-base">

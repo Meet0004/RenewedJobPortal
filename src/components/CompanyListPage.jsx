@@ -7,7 +7,7 @@ const CompanyListPage = ({ filteredCompanies, searchTerm, setSearchTerm }) => {
   return (
     <div className="min-h-screen bg-[#FFFDFB] py-12 px-4">
   <div className="max-w-7xl mx-auto">
-    <div className="text-center mb-12">
+    <div className="text-center mb-4">
       <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
         Company Listings
       </h1>

@@ -3,7 +3,7 @@ const companiesData = [
   id: 11,company: "Meesho",
   role: "Front-End Developer",
   hiringLink: "https://www.naukri.com/job-listings-front-end-developer-meesho-bengaluru-0-to-2-years-271125013614",shortdescription: "",
-  location: "NA",
+  location: "mumbai",
   Stipend: "NA",
   fulldescription:`
 
