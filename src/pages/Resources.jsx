@@ -202,7 +202,19 @@ function Resources() {
           No resources found matching "{searchQuery}"
         </div>
       )}
+
+
+      <h3 className="text-center mb-4 mt-4 ">
+          <a href="/contact-us" className="inline-flex items-center gap-2 text-2xl font-semibold text-orange-500 hover:text-orange-600 transition-colors group">
+          In case of missing resources in purchase please contact us. <br></br>
+            Couldn't find what you were looking for? Reach out to us!
+            <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </h3>
     </div>
+    
   );
 }
 

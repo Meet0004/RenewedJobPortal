@@ -22,14 +22,16 @@ const Companies_details = () => {
   if (companyName && role) {
     if (!selectedCompany) {
       return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Company Not Found</h2>
-            <Link to="/company-details" className="text-orange-600 hover:underline">
-              ← Back to Home
-            </Link>
-          </div>
-        </div>
+        // ❌ Company Not Found UI
+<div className="min-h-screen bg-[#FFFDFB] flex items-center justify-center p-4">
+  <div className="text-center">
+    <h2 className="text-2xl font-bold text-black mb-4">Company Not Found</h2>
+    <Link to="/company-details" className="text-[#FA5500] hover:underline">
+      ← Back to Home
+    </Link>
+  </div>
+</div>
+
       )
     }
 
