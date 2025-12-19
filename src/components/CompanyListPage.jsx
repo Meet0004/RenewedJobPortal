@@ -19,10 +19,13 @@ const CompanyListPage = ({ filteredCompanies, searchTerm, setSearchTerm }) => {
     <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {filteredCompanies.map((item, index) => (
-        <CompanyCard key={index} company={item} />
-      ))}
-    </div>
+  {[...filteredCompanies]
+    .sort((a, b) => b.id - a.id)   // descending by id
+    .map((item) => (
+      <CompanyCard key={item.id} company={item} />
+    ))}
+</div>
+
 
     {filteredCompanies.length === 0 && (
       <div className="text-center py-12">

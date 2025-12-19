@@ -1,5 +1,5 @@
 import React from 'react'
-import { Building2, MapPin, DollarSign, Briefcase } from 'lucide-react'
+import { Building2, MapPin, Briefcase, IndianRupee } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const CompanyCard = ({ company }) => {
@@ -30,10 +30,10 @@ const CompanyCard = ({ company }) => {
             <span className="truncate">{company.location}</span>
           </div>
 
-          <div className="flex items-center gap-2 text-sm font-semibold text-[#FA5500]">
-            <DollarSign className="w-4 h-4 flex-shrink-0" />
+          {/* <div className="flex items-center gap-2 text-sm font-semibold text-[#FA5500]">
+            <IndianRupee className="w-4 h-4 flex-shrink-0" />
             <span>{company.Stipend}</span>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-6 pt-4 border-t border-black/10">

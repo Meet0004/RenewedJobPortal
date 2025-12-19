@@ -6,12 +6,14 @@ import Resources from './pages/Resources'
 import Contact_us from './pages/Contact_us'
 import Legal_info from './pages/Legal_info'
 import Header from './components/Header'
+import Header1 from './components/Header1'
 import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return (
 
     <div>
+      <Header1 />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Header1 from '../components/Header1'
 const Home = () => {
   return (
+    <>
     <div className="min-h-screen bg-gradient-to-b from-white to-orange-50">
+
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-8 py-20">
         <div className="text-center mb-16">
@@ -103,7 +105,7 @@ const Home = () => {
           <p className="text-gray-600 text-xs">© 2024 Job Portal. All rights reserved.</p>
         </div>
       </footer>
-    </div>
+    </div></>
   )
 }
 
